@@ -9,19 +9,25 @@ Use this skill to pull issue details from YouTrack and turn them into a concrete
 
 ## Quick start
 
-- If environment is not configured, ask for setup and run `scripts/setup_env.sh`.
-- Require `YOUTRACK_BASE_URL` and `YOUTRACK_TOKEN`.
-- Never ask the user to paste the full token in chat.
-- Ask the user to set token locally and confirm when ready, or offer to run the interactive setup script.
+- If not configured, ask the user to set `YOUTRACK_BASE_URL` and `YOUTRACK_TOKEN`.
+- Prefer the interactive setup script. It prompts in terminal and hides token input.
+- Never ask the user to paste a full token in chat. Ask them to enter it only in terminal.
 - Always call YouTrack API directly when issue details are needed.
 
-If token/domain is missing, provide these steps:
-1. Create a YouTrack permanent token from user profile security settings.
-2. Run setup script:
+If base URL/token is missing, provide these steps:
+1. Open YouTrack -> profile -> security and create a permanent token.
+2. Run interactive setup (Codex can run this in terminal):
 ```bash
+export CODEX_HOME="${CODEX_HOME:-$HOME/.codex}"
 "$CODEX_HOME/skills/youtrack/scripts/setup_env.sh"
 ```
-3. Restart Codex desktop after env update.
+3. Enter base URL and token in terminal when prompted (token is hidden).
+4. Apply env in current shell:
+```bash
+source ~/.zshrc
+```
+Use `~/.bashrc` or `~/.profile` if not using zsh.
+5. Restart Codex desktop.
 
 ## Required environment variables
 
@@ -29,6 +35,7 @@ If token/domain is missing, provide these steps:
 - `YOUTRACK_TOKEN` (YouTrack permanent token)
 
 Never store tokens in repository files or commit them.
+Never echo tokens in command output.
 
 ## Workflow
 
