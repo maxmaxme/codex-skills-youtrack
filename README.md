@@ -1,6 +1,8 @@
-# youtrack
+# Youtrack codex skill
 
 Public Codex skill for reading YouTrack issues and turning them into implementation-ready coding context.
+
+https://openai.com/index/introducing-the-codex-app/
 
 ## What this skill does
 
