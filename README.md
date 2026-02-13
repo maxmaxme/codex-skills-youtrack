@@ -1,5 +1,7 @@
 # Youtrack codex skill
 
+[![Buy Me a Coffee](https://img.buymeacoffee.com/button-api/?text=Buy+me+a+coffee&emoji=%E2%98%95&slug=maxmaxme&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff)](https://buymeacoffee.com/maxmaxme)
+
 Public Codex skill for reading YouTrack issues and turning them into implementation-ready coding context.
 
 https://openai.com/index/introducing-the-codex-app/
