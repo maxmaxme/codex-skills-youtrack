@@ -20,6 +20,10 @@ Example prompt:
 $skill-installer Install skill maxmaxme/codex-skills-youtrack
 ```
 
+During installation, Codex may ask for multiple approval prompts for network commands.
+- Press `Yes` for each required step.
+- To avoid repeated prompts, choose `Yes, and don't ask again...` for repeated installer command prefixes.
+
 After installation, restart Codex to load the skill.
 
 ## Expected UX
