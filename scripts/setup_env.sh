@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-marker_start="# >>> codex-youtrack >>>"
-marker_end="# <<< codex-youtrack <<<"
+marker_start="# >>> youtrack-skill >>>"
+marker_end="# <<< youtrack-skill <<<"
 
 shell_name="$(basename "${SHELL:-}")"
 case "$shell_name" in
@@ -53,5 +53,5 @@ cat <<MSG
 Saved YouTrack environment variables to: $rc_file
 Run:
   source "$rc_file"
-Then restart Codex desktop.
+Then restart your coding agent session if needed.
 MSG

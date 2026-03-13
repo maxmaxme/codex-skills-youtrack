@@ -1,6 +1,6 @@
 ---
 name: youtrack
-description: Fetch and analyze YouTrack issues, then convert task text into actionable implementation steps for coding work. Use when the user references YouTrack, provides an issue key like ABC-123, asks to "do the task", requests task details, acceptance criteria, linked issues, bug-fix context from YouTrack, or asks to configure YouTrack access token/domain for Codex.
+description: Fetch and analyze YouTrack issues, then convert task text into actionable implementation steps for coding work. Use when the user references YouTrack, provides an issue key like ABC-123, asks to "do the task", requests task details, acceptance criteria, linked issues, bug-fix context from YouTrack, or asks to configure YouTrack access token/domain.
 ---
 
 # YouTrack
@@ -16,10 +16,9 @@ Use this skill to pull issue details from YouTrack and turn them into a concrete
 
 If base URL/token is missing, provide these steps:
 1. Open YouTrack -> profile -> security and create a permanent token.
-2. Run interactive setup (Codex can run this in terminal):
+2. Run interactive setup from this skill directory:
 ```bash
-export CODEX_HOME="${CODEX_HOME:-$HOME/.codex}"
-"$CODEX_HOME/skills/youtrack/scripts/setup_env.sh"
+./scripts/setup_env.sh
 ```
 3. Enter base URL and token in terminal when prompted (token is hidden).
 4. Apply env in current shell:
@@ -27,7 +26,7 @@ export CODEX_HOME="${CODEX_HOME:-$HOME/.codex}"
 source ~/.zshrc
 ```
 Use `~/.bashrc` or `~/.profile` if not using zsh.
-5. Restart Codex desktop.
+5. Restart your coding agent session if needed.
 
 ## Required environment variables
 
@@ -64,11 +63,11 @@ Never echo tokens in command output.
 Fetch one issue:
 
 ```bash
-"$CODEX_HOME/skills/youtrack/scripts/fetch_issue.sh" ABC-123
+./scripts/fetch_issue.sh ABC-123
 ```
 
 Fetch list by query:
 
 ```bash
-"$CODEX_HOME/skills/youtrack/scripts/fetch_issue.sh" --query 'for: me #Unresolved'
+./scripts/fetch_issue.sh --query 'for: me #Unresolved'
 ```

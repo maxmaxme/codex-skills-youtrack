@@ -1,10 +1,8 @@
-# Youtrack codex skill
+# YouTrack agent skill
 
 [![Buy Me a Coffee](https://img.buymeacoffee.com/button-api/?text=Buy+me+a+coffee&emoji=%E2%98%95&slug=maxmaxme&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff)](https://buymeacoffee.com/maxmaxme)
 
-Public Codex skill for reading YouTrack issues and turning them into implementation-ready coding context.
-
-https://openai.com/index/introducing-the-codex-app/
+Public agent skill for reading YouTrack issues and turning them into implementation-ready coding context.
 
 ## What this skill does
 
@@ -13,20 +11,36 @@ https://openai.com/index/introducing-the-codex-app/
 - Extracts key fields: `summary`, `description`, `customFields`, `links`, `subtasks`.
 - Produces an actionable brief and can continue to implementation.
 
-## Install
+## Install with `skills` CLI
 
-Ask Codex to install it via `skill-installer` from this repository.
-Example prompt:
+This repository is compatible with [`skills`](https://www.npmjs.com/package/skills), so you can install it for different coding agents (Codex, Claude Code, Cursor, OpenCode, and others).
 
+Install from GitHub:
+
+```bash
+npx skills add maxmaxme/codex-skills-youtrack
 ```
-$skill-installer Install skill maxmaxme/codex-skills-youtrack
+
+Install for specific agent(s):
+
+```bash
+npx skills add maxmaxme/codex-skills-youtrack -a codex
+npx skills add maxmaxme/codex-skills-youtrack -a claude-code -a cursor
 ```
 
-During installation, Codex may ask for multiple approval prompts for network commands.
-- Press `Yes` for each required step.
-- To avoid repeated prompts, choose `Yes, and don't ask again...` for repeated installer command prefixes.
+Install globally (available in all projects):
 
-After installation, restart Codex to load the skill.
+```bash
+npx skills add maxmaxme/codex-skills-youtrack -g
+```
+
+Preview skill(s) before installing:
+
+```bash
+npx skills add maxmaxme/codex-skills-youtrack --list
+```
+
+After installation, restart your agent if it does not pick up newly installed skills automatically.
 
 ## Expected UX
 
